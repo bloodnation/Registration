@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="form" role="main">
+        <h1 class="title">Student Registration</h1>
+        <form id="registrationForm" aria-labelledby="registration-title" novalidate>
+            <form id="registrationForm" aria-labelledby="registration-title" novalidate>
+            <div class="flex">
+                <div class="form-column">
+                    <label>
+                        <input class="input" type="text" id="name" name="name" required placeholder=" ">
+                        <span>Full Name</span>
+                        <div class="error-message" id="name-error"></div>
+                    </label>
+                    
+                    <label>
+                        <input class="input" type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}" placeholder=" ">
+                        <span>Mobile No</span>
+                        <div class="error-message" id="mobile-error">Please enter a 10-digit number</div>
+                    </label>
+                    
+                    <label>
+                        <input class="input" type="text" id="id_number" name="id_number" required placeholder=" ">
+                        <span>ID Number</span>
+                        <div class="error-message" id="id-error"></div>
+                    </label>
+                    
+                    <label>
+                        <input class="input" type="email" id="email" name="email" required placeholder=" ">
+                        <span>Email Address</span>
+                        <div class="error-message" id="email-error">Please enter a valid email address</div>
+                    </label>
+                    
+                    <fieldset>
+                        <legend>Gender</legend>
+                        <div>
+                            <input type="radio" id="male" name="gender" value="Male" required>
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" value="Female">
+                            <label for="female">Female</label>
+                        </div>
+                    </fieldset>
+                </div>
+                
+                <div class="form-column">
+                    <label>
+                        <input class="input" type="text" id="residence" name="residence" required placeholder=" ">
+                        <span>Current Residence</span>
+                        <div class="error-message" id="residence-error"></div>
+                    </label>
+                    
+                    <label>
+                        <input class="input" type="tel" id="emergency1" name="emergency1" required placeholder=" ">
+                        <span>Emergency Contact 1</span>
+                        <div class="error-message" id="emergency1-error"></div>
+                    </label>
+                    
+                    <label>
+                        <input class="input" type="tel" id="emergency2" name="emergency2" required placeholder=" ">
+                        <span>Emergency Contact 2</span>
+                        <div class="error-message" id="emergency2-error"></div>
+                    </label>
+                    
+                    <label>
+                        <select class="input" id="course" name="course" required>
+                            <option value="" disabled selected hidden></option>
+                            <option value="Computer Programming">Computer Programming</option>
+                            <option value="Welding">Welding</option>
+                            <option value="Computer Packages">Computer Packages</option>
+                            <option value="Chinese">Chinese</option>
+                            <option value="Mind Education">Mind Education</option>
+                            <option value="Hair Dressing">Hair Dressing</option>
+                            <option value="Beauty">Beauty</option>
+                            <option value="Barbering">Barbering</option>
+                            <option value="Theology">Theology</option>
+                            <option value="Dance">Dance</option>
+                            <option value="Sign Language">Sign Language</option>
+                            <option value="Electrical Installation">Electrical Installation</option>
+                            <option value="Videography">Videography</option>
+                            <option value="Photography">Photography</option>
+                        </select>
+                        <span>Intended Course</span>
+                        <div class="error-message" id="course-error"></div>
+                    </label>
+                    
+                    <div class="progress-container">
+                        <div class="progress-bar" id="form-progress"></div>
+                        <span class="progress-text">Form completion: <span id="completion-percentage">0%</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-agreement">
+                <input type="checkbox" id="agreement" name="agreement" required>
+                <label for="agreement">I agree to the <a href="#" class="terms-link">terms and conditions</a></label>
+                <div class="error-message" id="agreement-error"></div>
+            </div>
+            <button type="submit" class="submit" id="submit-button">
+                <span class="button-text">Submit Registration</span>
+                <span class="button-icon">→</span>
+            </button>
+        </form>
+        <div class="button-group">
+        <!--   <button class="submit" id="export-json" aria-label="Export Registration Data to JSON">
+                <span class="button-text">Export to JSON</span>
+            </button> -->
+            <button class="submit" onclick="checkRegistration()" aria-label="Check Registration Status">
+                <span class="button-text">Check Registration</span>
+            </button>
+        </div>
+        <div class="notification" id="notification" aria-live="polite"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

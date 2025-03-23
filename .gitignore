@@ -1,0 +1,42 @@
+# Ignore virtual environment files
+venv/
+.env/
+.env.local
+.env.development
+.env.production
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore SQLite database
+*.db
+*.sqlite3
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore Node.js dependencies (if any)
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore compiled files
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore local development files
+local_settings.py
+settings.ini
+
+# Ignore Flask secret key
+secret_key.txt
+
+# Ignore exported files (JSON, Excel, PDF)
+exports/
