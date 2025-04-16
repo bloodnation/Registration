@@ -1,0 +1,17 @@
+*.db
+*.sqlite3
+__pycache__/
+venv/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info
+*.so
+*.DS_Store
+node_modules/
+*.pdf
+*.xlsx
+*.json
+tests/
+docs/
+examples/

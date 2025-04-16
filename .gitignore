@@ -40,3 +40,4 @@ secret_key.txt
 
 # Ignore exported files (JSON, Excel, PDF)
 exports/
+.vercel

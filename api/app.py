@@ -220,5 +220,5 @@ def export_pdf():
 # Initialize the database when the app starts
 initialize_db()
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
